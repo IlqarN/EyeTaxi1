@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="AdminPanel.Views.NavigationBarView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AdminPanel.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="50" d:DesignWidth="800">
+
+
+    <Border BorderBrush="Gray" BorderThickness="0,0,0,1.4">
+        <Grid Background="White">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <!--Company Name-->
+            <TextBlock 
+                Text="Eye Taxi" 
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Center" 
+                Margin="40,0"
+                FontSize="20"
+                FontFamily="Gadugi" FontWeight="Bold"/>
+            <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                <Button Command="{Binding NavigateDriverPricingCommand}" Style="{StaticResource WithOutBorderBtn}">Pricing</Button>
+                <Button Command="{Binding NavigateDriverListCommand}" Style="{StaticResource WithOutBorderBtn}">Drivers</Button>
+                <Button Margin="0,5,20,5" Background="Orange" Foreground="Black" Padding="20,0,10,0" Command="{Binding NavigateAddDriverCommand}" Style="{StaticResource WithBorderBtn}">Add Driver</Button>
+            </StackPanel>
+        </Grid>
+    </Border>
+</UserControl>

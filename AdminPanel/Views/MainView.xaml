@@ -1,0 +1,85 @@
+﻿<Window x:Class="AdminPanel.Views.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AdminPanel.Views"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d" Height="600" Width="1024" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None"  >
+    <!--<Grid >
+        -->
+    <!--<ContentControl  Content="{Binding NavigationBarViewModel}"/>-->
+    <!--
+        <ContentControl Grid.Column="1" Content="{Binding SelectedViewModel}"/>
+    </Grid>-->
+
+    <Grid Background="#FFEEEEEE" MouseDown="Grid_MouseDown">
+
+        <Grid Margin="250,0,0,0">
+            <ContentControl Content="{Binding SelectedViewModel}" Margin="1,0,0,0"/>
+        </Grid>
+
+        <Grid Width="250" HorizontalAlignment="Left" Background="Black" Opacity="0.9">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="27*" ></RowDefinition>
+                <RowDefinition Height="43.333"></RowDefinition>
+                <RowDefinition Height="43.333"></RowDefinition>
+                <RowDefinition Height="43.333"></RowDefinition>
+                <RowDefinition Height="50*" ></RowDefinition>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Horizontal" Margin="10,0,0,43" Grid.RowSpan="2">
+                <Image Source="AdminPanel/Icons/taxi_icon.png" Height="45" Width="45"/>
+                <Label Padding="0" Foreground="#FFCCCCCC" FontSize="24" FontFamily="Dubai Medium" Content=" Admin Panel" Margin="0,64,0,54.8" Width="163"/>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Orientation="Horizontal">
+                <Image Margin="10" ></Image>
+                <Button
+                    Command="{Binding NavigateDriverPricingCommand}"
+                    Width="187"
+                    Content="Pricing"
+                    Background="Orange"
+                    Foreground="Black" Margin="0,6,0,5.2"
+                    />
+
+            </StackPanel>
+            <StackPanel Grid.Row="2" Orientation="Horizontal">
+                <Image Margin="10"></Image>
+                <Button
+                    Command="{Binding NavigateDriverListCommand}"
+                    Width="187"
+                    Content="Drivers"
+                    Background="Orange"
+                    Foreground="Black"
+                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Margin="0,6,0,5.333" >
+
+                </Button>
+
+            </StackPanel>
+            <StackPanel Grid.Row="3" Orientation="Horizontal">
+                <Image Margin="10"></Image>
+                <Button
+                    Command="{Binding NavigateAddDriverCommand}"
+                    Width="187"
+                    Content="Add Driver"
+                    Foreground="Black"
+                    Background="Orange"
+                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Margin="0,6,0,5.333" >
+
+                </Button>
+
+            </StackPanel>
+            <StackPanel Grid.Row="4" Orientation="Horizontal">
+                <Image Margin="10" ></Image>
+                <Button
+                    Name="ButtonFecharr"
+                    Width="62"
+                    Content="EXIT"
+                    Foreground="Black"
+                    Background="DarkCyan"
+                    Click="ButtonFechar_Click"
+                    Margin="0,268,0,9.6" Height="Auto" />
+            </StackPanel>
+        </Grid>
+
+    </Grid>
+</Window>
